@@ -18,10 +18,16 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'summary',
-      repo: '',
-      loadSidebar: true,
+      el: '#app',
+      repo: 'https://github.com/dzh1104?tab=repositories',
+      maxLevel: 4,
       loadNavbar: true,
+      loadNavbar: '_navbar.md',
+      loadSidebar: true,
+      loadSidebar: '_sidebar.md',
+      subMaxLevel: 2,
+      homepage: 'README.md',
+      name: 'summary',
       coverpage: true
     }
   </script>
