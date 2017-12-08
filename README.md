@@ -1,4 +1,1 @@
-# docs
-![logo](img1.jpg)
-[baidu](http://www.baidu.com)
-{docsify-updated} 
+[文档](https://dzh1104.github.io/docs/)
