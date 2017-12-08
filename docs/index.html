@@ -8,6 +8,16 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css">
+  <style>
+    a {
+      text-decoration-line: none !important;
+    }
+
+    .sidebar-nav a:hover {
+      color: #42b983!important;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +25,7 @@
     <a href="#/">EN</a>
     <a href="#/zh-cn/">中文</a>
   </nav>
-  <div id="app"></div>
+  <div id="app">Loading...</div>
   <script>
     window.$docsify = {
       el: '#app',
@@ -24,14 +34,90 @@
       loadNavbar: true,
       loadNavbar: '_navbar.md',
       loadSidebar: true,
+      autoHeader: true,
       loadSidebar: '_sidebar.md',
       subMaxLevel: 2,
       homepage: 'README.md',
+      basePath: '/',
+      coverpage: true,
       name: 'summary',
-      coverpage: true
+      nameLink: '/',
+      themeColor: '#42b983',
+      alias: {},
+      mergeNavbar: true,
+      formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
+      externalLinkTarget: '_blank',
+      search: {
+        placeholder: '搜索'
+      },
+      plugins: [
+        function (hook, vm) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span><a href="https://github.com/dzh1104">dzh1104</a> &copy;2017.</span>',
+            '<span>Proudly published with <a href="https://github.com/dzh1104/docs" target="_blank">summary</a>.</span>',
+            '</footer>'
+          ].join('')
+
+          hook.init(function () {
+            // 初始化时调用，只调用一次，没有参数。
+          })
+
+          hook.beforeEach(function (content) {
+            // 每次开始解析 Markdown 内容时调用
+            // ...
+            return content
+          })
+
+          hook.afterEach(function (html, next) {
+            // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
+            // ...
+            // 异步处理完成后调用 next(html) 返回结果
+            next(html + footer)
+            // next(html)
+          })
+
+          hook.doneEach(function () {
+            // 每次路由切换时数据全部加载完成后调用，没有参数。
+            // ...
+          })
+
+          hook.mounted(function () {
+            // 初始化完成后调用 ，只调用一次，没有参数。
+          })
+
+          hook.ready(function () {
+            // 初始化并第一次加完成数据后调用，没有参数。
+          })
+        }
+      ]
     }
   </script>
+  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
+  <!-- <script src="//unpkg.com/docsify"></script> -->
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110377374-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-110377374-1');
+  </script>
+  <!-- Progressive Web Apps(PWA) -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 </body>
 
 </html>
