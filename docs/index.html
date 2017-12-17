@@ -18,6 +18,10 @@
     .sidebar-nav a:hover {
       color: #42b983!important;
     }
+    ul,
+    li {
+      list-style: none;
+    }
   </style>
 </head>
 
@@ -32,7 +36,6 @@
       el: '#app',
       repo: 'https://github.com/dzh1104?tab=repositories',
       maxLevel: 4,
-      loadNavbar: true,
       loadSidebar: true,
       autoHeader: true,
       subMaxLevel: 2,
@@ -112,12 +115,12 @@
     gtag('js', new Date());
     gtag('config', 'UA-110377374-1');
   </script>
-  <!-- Progressive Web Apps(PWA) -->
+  <!-- Progressive Web Apps(PWA)
   <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
     }
-  </script>
+  </script> -->
 </body>
 
 </html>
