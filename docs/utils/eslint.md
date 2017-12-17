@@ -21,3 +21,17 @@ ESLint Integrate ESLint into VS Code
   "plugins": ["html"]
 }
 ~~~
+
+## 取消ESLint
+在**build/webpack.base.conf.js**中注释以下代码
+~~~js
+{
+  test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: "pre",
+  include: [resolve('src'), resolve('test')],
+  options: {
+      formatter: require('eslint-friendly-formatter')
+  }
+}
+~~~
