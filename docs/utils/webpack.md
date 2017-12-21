@@ -17,3 +17,11 @@ webpack的强大功能之一: [`require.ensure`](https://doc.webpack-china.org/g
 不是在组件初始化挂载就引入，只有用户点击导出zip才会加载相应的依赖，点击后可以查看到index.html中head加了一个script标签
 
 第一个参数[] 是一个数组，当前这个 require.ensure所依赖的其他 异步加载的模块
+
+## dynamic import()
+
+>Instead of downloading the entire app before users can use it, code splitting allows you to split your code into small chunks which you can then load on demand
+
+`require.ensure`是webpack的过渡产物，不推荐使用，应当使用[dynamic import()](https://github.com/dzh1104/dzh-react#code-splitting)
+
+>The import() function-like form takes the module name as an argument and returns a Promise which always resolves to the namespace object of the module.
