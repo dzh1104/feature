@@ -68,7 +68,13 @@
           hook.beforeEach(function (content) {
             // 每次开始解析 Markdown 内容时调用
             // ...
-            return content
+            var url = 'https://github.com/dzh1104/docs' + vm.route.file
+            var editHtml = '[](' + url + ')\n'
+            return editHtml
+              + content
+              + '\n----\n'
+              + 'Last modified {docsify-updated} '
+              + editHtml
           })
 
           hook.afterEach(function (html, next) {

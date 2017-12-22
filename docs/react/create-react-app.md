@@ -106,6 +106,8 @@ npm install husky lint-staged prettier -D
 
 To tell the development server to proxy any unknown requests to your API server in development, add a proxy `field` to your `package.json`
 
+The proxy option supports HTTP, HTTPS and WebSocket connections.If the proxy option is not flexible enough for you, We can [Configure the proxy yourself](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#configuring-the-proxy-manually)
+
 ~~~json
 "proxy": {
   "/dev": {
@@ -115,6 +117,3 @@ To tell the development server to proxy any unknown requests to your API server 
 }
 ~~~
 
-The proxy option supports HTTP, HTTPS and WebSocket connections.
-
-If the proxy option is not flexible enough for you, We can [Configure the proxy yourself](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#configuring-the-proxy-manually)
