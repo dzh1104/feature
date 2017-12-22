@@ -20,6 +20,14 @@ npm start
 ## npm run eject
 >Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
 
+## npm run build
+
+>You may serve it with a static server
+
+npm install -g serve
+
+serve -s build
+
 ## Debugging in the Editor
 
 >You would need to have the latest version of `VS Code` and VS Code `Chrome Debugger Extension` installed.
