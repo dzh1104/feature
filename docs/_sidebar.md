@@ -4,6 +4,7 @@
     - [nvm](utils/nvm.md)
     - [iconfont](utils/iconfont.md)
     - [webpack](utils/webpack.md)
+    - [travis](utils/travis.md)
 - javascript
     - [base](javascript/base.md)
 - react
