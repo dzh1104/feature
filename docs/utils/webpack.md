@@ -25,3 +25,7 @@ webpack的强大功能之一: [`require.ensure`](https://doc.webpack-china.org/g
 `require.ensure`是webpack的过渡产物，不推荐使用，应当使用[dynamic import()](https://github.com/dzh1104/dzh-react#code-splitting)
 
 >The import() function-like form takes the module name as an argument and returns a Promise which always resolves to the namespace object of the module.
+
+## css-hot-loader
+
+> This is a css hot loader, which supprot hot module replacement for an extracted css file.[learn blog](https://www.cnblogs.com/Nick-chen/p/7211879.html?utm_source=tuicool&utm_medium=referral)
