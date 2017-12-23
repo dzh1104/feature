@@ -5,6 +5,7 @@
     - [iconfont](utils/iconfont.md)
     - [webpack](utils/webpack.md)
     - [travis](utils/travis.md)
+    - [moment](utils/moment.md)
 - javascript
     - [base](javascript/base.md)
 - react
