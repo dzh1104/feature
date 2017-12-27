@@ -6,6 +6,7 @@
     - [webpack](utils/webpack.md)
     - [travis](utils/travis.md)
     - [moment](utils/moment.md)
+    - [git](utils/git.md)
 - javascript
     - [base](javascript/base.md)
 - react
