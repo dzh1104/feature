@@ -24,6 +24,56 @@
 
 首先这是router.js中的路由配置不能添加exact，如果将path="/"放在前面，当路径为**/user**时，由于没有使用**exact**属性 + 使用了**Switch**，所以只会渲染path="/"的组件
 
+## 组件渲染
+
+当React遇到的元素时用户自定义的组件，它会将JSX属性作为单个对象传递给该组件，这个对象称之为"props"
+
+> 如果是函数组件，props对象将作为函数参数
+```jsx
+const TestComponent = (props) => (
+  <div>Hello, {props.name}</div>
+);
+```
+
+> 如果是类组件，props对象将作为类的属性
+```jsx
+class TestComponent extends Component {
+  constructor(props) {
+
+  }
+  render() {
+    return (
+      <div>Hello, {this.props.name}</div>
+    );
+  }
+}
+```
+
+##JSX属性传递的方式
+
+**key=value**或者用对象扩展符**...Object**
+```jsx
+const TestComponent = (props) => (
+  <div>Hello, {props.name}</div>
+);
+<TestComponent name="dzh" />
+<TestComponent {...{name: 'dzh'}} />
+<TestComponent {...{...{name: 'dzh'}, ...{age: 18}} />
+```
+
+##props
+
+React严格的规则: props是只读的
+
+##state
+
+state与props十分相似，但是状态是私有的，完全受控于当前组件
+
+##类组件与函数组件
+
+类组件特有的: state 
+
+
 
 
 
