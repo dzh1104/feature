@@ -50,4 +50,5 @@ Vue 在内部尝试对异步队列使用原生的 `Promise.then` 和 `MessageCha
 - example1.items.splice(indexOfItem, 1, newValue)
 
 解决第二类问题
+
 example1.items.splice(newLength)
