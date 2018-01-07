@@ -49,7 +49,7 @@ class TestComponent extends Component {
 }
 ```
 
-##JSX属性传递的方式
+## JSX属性传递的方式
 
 **key=value**或者用对象扩展符**...Object**
 ```jsx
@@ -61,14 +61,19 @@ const TestComponent = (props) => (
 <TestComponent {...{...{name: 'dzh'}, ...{age: 18}} />
 ```
 
-##props
+## props
 
 React严格的规则: props是只读的
 
-##state
+## state
 
 state与props十分相似，但是状态是私有的，完全受控于当前组件
 
-##类组件与函数组件
+## 类组件与函数组件
 
 类组件特有的: state 声明周期
+
+## 常用第三方
+
+- nprogress 路由进度条
+- react-loadable 路由懒加载
