@@ -138,6 +138,61 @@ export default Popper;
 
 动态组件 将类型赋值给大写开头的变量
 
+## 父子间通信
+
+通过props
+
+```js
+import React from 'react';
+
+class Sub extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    };
+  }
+
+  increment = () => {
+    this.setState(prevState => ({
+      counter: ++prevState.counter
+    }));
+    this.props.incrementTotal();
+  };
+
+  render() {
+    return <button onClick={this.increment}>{this.state.counter}</button>;
+  }
+}
+
+class Communication extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: 0
+    };
+  }
+
+  incrementTotal = () => {
+    this.setState(prevState => ({
+      total: ++prevState.total
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.total}
+        <Sub incrementTotal={this.incrementTotal} />
+        <Sub incrementTotal={this.incrementTotal} />
+      </div>
+    );
+  }
+}
+
+export default Communication;
+
+```
 
 
 ## 常用第三方
