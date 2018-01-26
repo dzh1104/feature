@@ -52,3 +52,36 @@ Vue 在内部尝试对异步队列使用原生的 `Promise.then` 和 `MessageCha
 解决第二类问题
 
 example1.items.splice(newLength)
+
+## img src属性 路径问题
+
+静态src可以直接写成相对路径
+
+```html
+<img src="../assets/icon/1.png"/>
+```
+
+动态src 推荐使用背景图代替
+
+```html
+<div :style="{backgroundImage: 'url(' + img + ')'}"></div>
+```
+
+如果动态src 要写成模板变量，要通过require 函数请求；这样webpack才能打包出正确的路径
+
+```html
+<img :src="item.icon"/>
+```
+
+```js
+board:[
+  {
+    "title":"开放产品",
+    "description":"开放产品是一款开放产品",
+    url:"#",
+    icon:require('../assets/icon/1.png'),
+    class:"mr15 mb15"
+  }
+]
+icon:require('../assets/icon/1.png') //webpack 可以打包的路径
+```
